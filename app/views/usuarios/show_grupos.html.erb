@@ -1,0 +1,181 @@
+<!--
+<br/>
+<h1>Pronosticos de <%=@usuario.nombre %></h1>
+
+
+
+
+ <div class="container">
+ <div class="row">
+
+
+ 
+<table class="table-striped" style="margin-right:10px;" >
+          <tr>
+            <td>Pronostico Grupo A</td>
+            <td>Puntos</td>
+
+        </tr>
+  <% @pronosticosGrupoA.each do |pr| %>
+
+          <%Juego.where(juego_id: pr.juego_id).each do |juego| %>
+          <tr>
+            <td><%= juego.local + " " + pr.goles_local.to_s + "-" +  juego.visitante + " "+ pr.goles_visitante.to_s %></td>
+            <td> <%=get_puntaje_de_partido(@usuario.id, juego.juego_id)%></td>
+
+        </tr>
+          <% end %>
+  <%end%>
+</table>
+
+
+
+<table class="table-striped" style="margin-right:10px;">
+          <tr>
+            <td>Pronostico Grupo B</td>
+            <td>Puntos</td>
+
+        </tr>
+  <% @pronosticosGrupoB.each do |pr| %>
+
+          <%Juego.where(juego_id: pr.juego_id).each do |juego| %>
+          <tr>
+            <td><%= juego.local + " " + pr.goles_local.to_s + "-" +  juego.visitante + " "+ pr.goles_visitante.to_s %></td>
+            <td> <%=get_puntaje_de_partido(@usuario.id, juego.juego_id)%></td>
+
+        </tr>
+          <% end %>
+  <%end%>
+</table>
+
+
+<table class="table-striped" style="margin-right:10px;">
+          <tr>
+            <td>Pronostico Grupo C</td>
+            <td>Puntos</td>
+
+        </tr>
+  <% @pronosticosGrupoC.each do |pr| %>
+
+          <%Juego.where(juego_id: pr.juego_id).each do |juego| %>
+          <tr>
+            <td><%= juego.local + " " + pr.goles_local.to_s + "-" +  juego.visitante + " "+ pr.goles_visitante.to_s %></td>
+            <td> <%=get_puntaje_de_partido(@usuario.id, juego.juego_id)%></td>
+
+        </tr>
+          <% end %>
+  <%end%>
+</table>
+</div>
+</div>
+</br>
+
+ <div class="container">
+ <div class="row">
+
+<table class="table-striped" style="margin-right:10px;">
+          <tr>
+            <td>Pronostico Grupo D</td>
+            <td>Puntos</td>
+
+        </tr>
+  <% @pronosticosGrupoD.each do |pr| %>
+
+          <%Juego.where(juego_id: pr.juego_id).each do |juego| %>
+          <tr>
+            <td><%= juego.local + " " + pr.goles_local.to_s + "-" +  juego.visitante + " "+ pr.goles_visitante.to_s %></td>
+            <td> <%=get_puntaje_de_partido(@usuario.id, juego.juego_id)%></td>
+
+        </tr>
+          <% end %>
+  <%end%>
+</table>
+
+
+
+
+
+<table class="table-striped" style="margin-right:10px;">
+          <tr>
+            <td>Pronostico Grupo E</td>
+            <td>Puntos</td>
+
+        </tr>
+  <% @pronosticosGrupoE.each do |pr| %>
+
+          <%Juego.where(juego_id: pr.juego_id).each do |juego| %>
+          <tr>
+            <td><%= juego.local + " " + pr.goles_local.to_s + "-" +  juego.visitante + " "+ pr.goles_visitante.to_s %></td>
+            <td> <%=get_puntaje_de_partido(@usuario.id, juego.juego_id)%></td>
+
+        </tr>
+          <% end %>
+  <%end%>
+</table>
+
+<table class="table-striped" style="margin-right:10px;">
+          <tr>
+            <td>Pronostico Grupo F</td>
+            <td>Puntos</td>
+
+        </tr>
+  <% @pronosticosGrupoF.each do |pr| %>
+
+          <%Juego.where(juego_id: pr.juego_id).each do |juego| %>
+          <tr>
+            <td><%= juego.local + " " + pr.goles_local.to_s + "-" +  juego.visitante + " "+ pr.goles_visitante.to_s %></td>
+            <td> <%=get_puntaje_de_partido(@usuario.id, juego.juego_id)%></td>
+
+        </tr>
+          <% end %>
+  <%end%>
+</table>
+
+</div>
+</div>
+
+</br>
+ <div class="container">
+ <div class="row">
+
+<table class="table-striped" style="margin-right:10px;">
+          <tr>
+            <td>Pronostico Grupo G</td>
+            <td>Puntos</td>
+
+        </tr>
+  <% @pronosticosGrupoG.each do |pr| %>
+
+          <%Juego.where(juego_id: pr.juego_id).each do |juego| %>
+          <tr>
+            <td><%= juego.local + " " + pr.goles_local.to_s + "-" +  juego.visitante + " "+ pr.goles_visitante.to_s %></td>
+            <td> <%=get_puntaje_de_partido(@usuario.id, juego.juego_id)%></td>
+
+        </tr>
+          <% end %>
+  <%end%>
+</table>
+
+<table class="table-striped" style="margin-right:10px;">
+          <tr>
+            <td>Pronostico Grupo H</td>
+            <td>Puntos</td>
+
+        </tr>
+  <% @pronosticosGrupoH.each do |pr| %>
+
+          <%Juego.where(juego_id: pr.juego_id).each do |juego| %>
+          <tr>
+            <td><%= juego.local + " " + pr.goles_local.to_s + "-" +  juego.visitante + " "+ pr.goles_visitante.to_s %></td>
+            <td> <%=get_puntaje_de_partido(@usuario.id, juego.juego_id)%></td>
+
+        </tr>
+          <% end %>
+  <%end%>
+</table>
+
+</div>
+</div>
+
+-->
+

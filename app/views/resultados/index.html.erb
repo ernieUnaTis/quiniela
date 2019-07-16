@@ -1,0 +1,23 @@
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Local</th>
+      <th></th>
+      <th>Visitante</th>
+      <th></th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  <tbody>
+      <% @juegos.each do |juego| %>
+        <tr>
+          <td><%= juego.local  %></td>
+          <td><%= juego.goles_local%></td>
+          <td><%= juego.visitante%></td>
+           <td><%= juego.goles_visitante%></td>
+          <td><a href="/resultados/<%= juego.juego_id %>">Ver detalle</a></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>

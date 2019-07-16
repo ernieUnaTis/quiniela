@@ -1,0 +1,23 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th>Usuario</th>
+      <th>Puntos</th>
+      <th>Marcadores Exactos</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  <tbody>
+      <% @tablaPosiciones.each  do |i,j,k| %>
+        <tr>
+        <%Usuario.where(nombre: i).each do |us| %>
+ 
+          <td><a href="/usuarios/<%= us.id %>"><%=i  %></a></td>
+         
+          <td><%=j  %></td>
+           <td><%=k  %></td>
+            <%end%>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>

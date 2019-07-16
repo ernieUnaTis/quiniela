@@ -1,0 +1,27 @@
+<%= form_tag pronosticos_path do %>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Local</th>
+      <th></th>
+      <th></th>
+      <th>Visitante</th>
+
+    </tr>
+  </thead>
+  <tbody>
+      <% @juegos.each do |juego| %>
+        <tr>
+          <td><%= juego.local %></td>
+          <td><input id="goles_locales" name="goles_local_<%=juego.juego_id%>" type="text" /></td>
+          <td><input id="goles_visitantes" name="goles_visitante_<%=juego.juego_id%>" type="text" /></td>
+          <td><%= juego.visitante %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+<input type="hidden" id="usuario_id" name="usuario_id" value="<%=params[:id]%>  ">
+  <%= submit_tag %>
+<% end %>

@@ -1,0 +1,64 @@
+<%if @pronosticos == true %>
+
+<table class="table">
+<tr>
+  <td>Usuario</td>
+        <td><%= @usuario.nombre %></td>
+       
+        
+    </tr>
+</table>
+<table class="table">
+  <tr>
+
+
+  <td>Pronostico</td>
+  <td>Puntos</td>
+    </tr>
+         
+	
+        <%@resultados.each do |us| %>
+	<tr>
+        <%@juego = Juego.where(juego_id: us.juego_id).take%>
+	<td><%= @juego.local%> <%=  us.goles_local %> - <%=@juego.visitante%> <%=  us.goles_visitante %></td>
+	<td></td>
+     	</tr>   
+        <% end %>
+        
+     
+    
+</table>
+
+<%else%>
+
+	<%= form_tag pronosticos_path do %>
+
+	<table class="table">
+  	<thead>
+    	<tr>
+      	<th>Local</th>
+      	<th></th>
+      	<th></th>
+      	<th>Visitante</th>
+
+    	</tr>
+ 	 </thead>
+  	<tbody>
+	 <% @juegos.each do |juego| %>
+        <tr>
+          <td><%= juego.local %></td>
+          <td><input id="goles_locales" name="goles_local_<%=juego.juego_id%>" type="text" /></td>
+          	<td><input id="goles_visitantes" name="goles_visitante_<%=juego.juego_id%>" type="text" /></td>
+          	<td><%= juego.visitante %></td>
+        	</tr>
+	<% end %>
+    	</tbody>
+  	</table>
+
+
+	<input type="hidden" id="usuario_id" name="usuario_id" value="<%=params[:id]%>  ">
+	<input type="hidden" id="jornada" name="jornada" value="<%=params[:jornada]%>"> 
+  	<%= submit_tag %>
+	<% end %>
+
+<% end %>

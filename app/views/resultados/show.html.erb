@@ -1,0 +1,27 @@
+
+<body>
+<table class="table">
+<tr>
+        <td><%= @juego.local %> </td><td><%= @juego.goles_local %>-<%= @juego.goles_visitante %></td><td><%= @juego.visitante %></td>
+        
+    </tr>
+</table>
+<table class="table">
+  <tr>
+  <td>Usuario</td>
+  <td>Pronostico</td>
+  <td>Puntos</td>
+    </tr>
+    <% @usuarios.each do |usuario| %>
+      <tr>
+        <td><%= usuario.nombre %></td>
+
+        <%UsuarioPartido.where(usuario_id: usuario.id, juego_id: @juego.juego_id).each do |us| %>
+        <td><%= us.goles_local %> - <%= us.goles_visitante %></td>
+        <td></td>
+        <% end %>
+          <td><%=%></td>
+      </tr>
+      <% end %>
+</table>
+</body>

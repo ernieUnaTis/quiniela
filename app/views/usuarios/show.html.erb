@@ -1,0 +1,20 @@
+<h1>Pronosticos de <%=@usuario.nombre %></h1>
+<table class="table-striped" style="margin-right:10px;" >
+          <tr>
+            <td>Pronostico</td>
+            <td>Puntos</td>
+
+        </tr>
+	<td>  
+<% @jornadas.each do |jor| %>
+<td><a href="/usuarios/<%= params[:id] %>/pronosticos/<%=jor%>"><%=jor%></a></td>
+            <td> <%=%></td>
+
+        </tr>
+         <% end %>
+</table>
+
+
+
+
+

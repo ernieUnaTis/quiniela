@@ -1,0 +1,29 @@
+
+<%if @juego.registrado == 1 %>
+    <p>
+        <b>Local:</b><%= @juego.local %> </b><%= @juego.goles_local %>
+    </p>
+    <p>
+        <b>Visitante:</b><%= @juego.visitante %><%= @juego.goles_visitante %>
+    </p>
+
+<%else %>
+<%= form_tag resultados_path do %>
+
+    <p>
+        <b>Local:</b><%= @juego.local %> </b>
+        <td><input id="goles_locales" name="goles_local" type="text" /></td>
+          
+    </p>
+    <p>
+        <b>Visitante:</b><%= @juego.visitante %>
+              <td><input id="goles_visitantes" name="goles_visitante" type="text" /></td>
+   
+    </p>
+    
+    
+    <input type="hidden" id="juego_id" name="juego_id" value="<%=params[:id]%>  ">
+  <%= submit_tag %>
+<% end %>
+
+<%end %>

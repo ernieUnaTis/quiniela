@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Quiniela</title>
+    <%= csrf_meta_tags %>
+    
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+
+  <body>
+
+
+  <%= yield %>
+ <% if session[:user_id] %>
+      <%= link_to 'Logout', logout_path, :method => :delete %>
+    <% end %>
+
+
+
+<% if logged_in? %>
+
+				<div class="col-md-6 col-md-offset-3" align="center">&nbsp;</div>
+				
+				<!-- Row Ligas -->
+				<div class="col-md-6 col-md-offset-3">
+					
+					<div class="row">
+					
+						<div class="col-md-6 text-center">
+							<a class="btn btn-primary" href="http://178.128.75.121:8080/pronosticos" role="button">Tabla de posiciones</a>
+						</div>
+						
+						<div class="col-md-6 text-center">
+							<a class="btn btn-info" href="http://178.128.75.121:8080/resultados" role="button">Detalle por Partido</a>
+						</div>
+						
+					</div>
+				</div>
+			</div>
+
+<% end %>
+
+  </body>
+</html>

@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  local: 
+  goles_local: 
+  visitante: 
+  goles_visitante: 
+  juego_id: 1
+
+two:
+  local: 
+  goles_local: 
+  visitante: 
+  goles_visitante: 
+  juego_id: 1
